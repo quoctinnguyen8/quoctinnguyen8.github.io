@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xin chào, mình tên Tín</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="lib/fontawesome-free-5.14.0-web/css/all.css">
 </head>
+
 <body>
-    <h1>Xin chào mấy bạn</h1>
-    <a href="page2.html">Xem trang 2</a>
+    <div class="small-screen">
+        <h1>Vui lòng truy cập trang web này bằng thiết bị có màn hình lớn hơn</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="box">
+
+            <div class="box-half-left">
+                <div class="avatar">
+                    <img src="pics/user/avatar.jpg" />
+                    <div class="slogan">
+                        <i>"Keep calm and study hard "</i>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <a href="https://www.facebook.com/ng.quoctin.11/" data-title="Facebook" target="_blank"><i
+                            class="fab fa-2x fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/ng.qtin__/" data-title="Instagram" target="_blank"><i
+                            class="fab fa-2x fa-instagram-square"></i></a>
+                    <a href="https://github.com/quoctinnguyen8" data-title="Github" target="_blank"><i
+                            class="fab fa-2x fa-github"></i></a>
+                </div>
+            </div>
+            <div class="box-half-right">
+                <div class="about-me">
+                    <h1>Nguyễn Quốc Tín</h1>
+                    <p>Thích lập trình & giải quyết vấn đề bằng coding</p>
+                </div>
+                <div class="info">
+                    <ul>
+                        <li><i class="fa fa-briefcase"></i> Sinh viên</li>
+                        <li><i class="fa fa-birthday-cake"></i> 01/01/1998</li>
+                        <li><i class="fa fa-mobile"></i> 0987654321</li>
+                        <li><i class="fa fa-laptop-code"></i> C#</li>
+                    </ul>
+                    <ul>
+                        <li><i class="fa fa-heart color-orangered"></i> Độc thân</li>
+                        <li data-title="xxxxxxxx@gmail.com"><i class="fa fa-at"></i> xxxxxxxx@gmail.com</li>
+                        <li><i class="fa fa-map-marked"></i> Đồng Tháp</li>
+                        <li><i class="fa fa-bookmark"></i> Đọc sách</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tooltip"></div>
+
+    <script>
+        var eles = document.querySelectorAll("a[data-title], li[data-title]");
+        var tooltip = document.querySelector(".tooltip");
+        eles.forEach((item, index) => {
+            item.addEventListener('mousemove', function (e) {
+                if (e.target.getAttribute("data-title")) {
+                    tooltip.innerText = e.target.getAttribute("data-title");
+                }
+                else {
+                    tooltip.innerText = e.target.parentElement.getAttribute("data-title");
+                }
+                tooltip.style.display = 'inline-block';
+                tooltip.style.top = e.pageY - tooltip.clientHeight - 20 + 'px';
+                tooltip.style.left = e.pageX - tooltip.clientWidth / 2 + 'px';
+            });
+            item.addEventListener('mouseleave', function(e){
+                tooltip.style.display='';
+            })
+        })
+    </script>
 </body>
+
 </html>
