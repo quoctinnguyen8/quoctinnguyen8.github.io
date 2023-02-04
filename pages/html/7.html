@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giao diện nhập liệu đơn giản</title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14pt;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .container .input-group{
+            border: 1px solid rgb(216, 226, 248);
+            box-shadow: 0 0 35px rgba(84, 125, 158, 0.3);
+            border-radius: 5px;
+            margin-top: 40px;
+            padding: 20px 40px;
+        }
+        .input-group .text-group {
+            margin: 25px 0;
+        }
+        .input-group .text-group *{
+            display: block;
+            color:rgb(16, 83, 146);
+            margin: 8px 0;
+        }
+        /* Định dạng text box */
+        .text-group input{
+            width: 100%;
+            padding: 3px 7px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            border-bottom: 2px solid rgb(129, 173, 214);
+            outline: none;
+            transition: 0.3s all;
+        }
+        .text-group input:focus{
+            box-shadow: 0 0 20px 1px rgba(82, 82, 82, 0.07);
+            border: 1px dashed rgb(129, 173, 214);
+            border-bottom: 2px solid rgb(129, 173, 214);
+        }
+        .text-group input::placeholder{
+            color:rgb(181, 209, 209);
+        }
+        .text-group input:focus::placeholder{
+            color:rgb(219, 236, 236);
+        }
+        /* Định dạng button */
+        .input-group .button-group{
+            width: 100%;
+        }
+        .button-group input{
+            width: 150px;
+            display: block;
+            margin: auto;
+            padding: 4px 0;
+            cursor: pointer;
+            color: white;
+            background-color: rgb(71, 174, 206);
+            border: 1.5px solid rgb(71, 174, 206);
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-shadow: 1px 1px rgb(12, 107, 44);
+            outline: none;
+            transition: 0.3s all;
+        }
+        .button-group input:hover{
+            color: rgb(71, 148, 172);
+            background-color: transparent;
+            text-shadow: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-group">
+            <div class="text-group">
+                <label for="text1">Nhập tên của bạn</label>
+                <input id="text1" type="text" placeholder="Hoho" autofocus/>
+            </div>
+            <div class="text-group">
+                <label for="text2">Nhập địa chỉ</label>
+                <input id="text2" type="text" placeholder="Cái Răng" autofocus/>
+            </div>
+            <div class="button-group">
+                <input type="button" value="Gửi" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

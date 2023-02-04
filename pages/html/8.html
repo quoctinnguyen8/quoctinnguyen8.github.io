@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google input style</title>
+
+    <style>
+        *{
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14pt;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .container .input-group{
+            border: 1px solid rgb(216, 226, 248);
+            box-shadow: 0 0 35px rgba(84, 125, 158, 0.3);
+            border-radius: 5px;
+            margin-top: 40px;
+            padding: 20px 40px;
+        }
+        .input-group .text-group {
+            margin: 25px 0;
+            position: relative;
+        }
+        .input-group .text-group *{
+            display: block;
+            margin: 8px 0;
+        }
+        /* Định dạng text box */
+        .text-group input{
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #c5c5c5;
+            color: #333333;
+            border-radius: 4px;
+            outline: none;
+            transition: 0.5s all;
+        }
+
+        .text-group label{
+            font-weight: 500;
+            position: absolute;
+            top: 2px;
+            left: 10px;
+            padding: 3px;
+            color: #8f8f8f;
+            background-color: white;
+            transition: 0.2s all;
+        }
+        .text-group input:focus{
+            border-color: #4285f4;
+            box-shadow: 0 0 0 1px #4285f4;
+        }
+
+        .text-group input:focus + label,
+        .text-group input:valid + label{
+            color: #4285f4;
+            font-size: 0.9em;
+            top: -23px;
+        }
+    </style>
+</head>
+<body>
+    <!-- #4285f4 -->
+    <div class="container">
+        <div class="input-group">
+            <div class="text-group">
+                <input id="text1" type="text" required autofocus />
+                <label for="text1">Email hoặc số điện thoại</label>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var inputText = document.querySelectorAll('.text-group input');
+        var labelText = document.querySelectorAll('.text-group label');
+        for(let i = 0; i < inputText.length; i++){
+            inputText[i].addEventListener("blur", (e)=>{
+                labelText[i].style.color = "#8f8f8f";
+            });
+            inputText[i].addEventListener("focus", (e)=>{
+                labelText[i].style.color = "";
+            });
+        }
+    </script>
+</body>
+</html>

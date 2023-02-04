@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 16pt;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container{
+            height: 100vh;
+            background-image: linear-gradient(120deg, rgb(130, 194, 255), rgb(0, 153, 255));
+            position: relative;
+        }
+
+        .ani{
+            background-color: white;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.466);
+            display: inline;
+            padding: 10px 20px;
+            border-radius: 5px;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+
+            animation: alibaba 4s infinite;
+
+            /*Đặt thuộc tính cho animation
+            animation-name: my-ani;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out; */
+        }
+
+        @keyframes alibaba{
+            0%, 100%{
+                top: 50px;
+                left: 20px;
+            }
+            50%{
+                left: 600px;
+                transform: scale(1.5) rotate(720deg);
+            }
+        }
+
+        /* @keyframes my-ani{
+            0%, 100%{
+                top: 50px;
+                left: 20px;
+            }
+            50%{
+                left: 600px;
+                transform: scale(1.5) rotate(720deg);
+            }
+        } */
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ani">Tín</div>
+    </div>
+</body>
+</html>

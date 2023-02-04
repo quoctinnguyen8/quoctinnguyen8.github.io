@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ảnh đại diện nhóm chat</title>
+    <style>
+    *{
+        margin:0; padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 100vw;
+        height:100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-image: linear-gradient(120deg, #42bff8, #0b8fcc);
+    }
+    .form-group{
+        width: 420px;
+        height: 350px;
+    }
+    .top-bar, .content{
+        width: 100%;
+        position: relative;
+    }
+    .top-bar{
+        height: 18%;
+        background-color: #f6f7f9;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .ball{
+        position: absolute;
+        background-color: #ffd42f;
+        width: 28px;
+        height: 28px;
+        top: 18px;
+        right: 70px;
+        border-radius: 50%;
+    }
+    .ball::before{
+        content: '';
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        background-color: #71cfeb;
+        right: 40px;
+        border-radius: 50%;
+    }
+    .ball::after{
+        content: '';
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        background-color: #f37372;
+        left: 40px;
+        border-radius: 50%;
+    }
+    .content{
+        height: 82%;
+        background-color: #393939;
+        border-radius: 0 0 20px 20px;
+    }
+    .content::before{
+        position: absolute;
+        content: '<1>';
+        font-family: Consolas, 'Courier New', monospace;
+        font-size: 150pt;
+        font-weight: 600;
+        color: #f6f7f9;
+        left: 42px;
+        top: 25px;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+            <div class="top-bar">
+                <span class="ball"></span>
+            </div>
+            <div class="content"></div>
+        </div>
+    </div>
+</body>
+</html>

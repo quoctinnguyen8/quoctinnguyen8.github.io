@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TH5 - Giới thiệu bản thân</title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw; height: 100vh;
+            background-image: url('pictures/bg.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            /*Căn giữa đối tượng con*/
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+        .info-group{
+            width: 400px;
+            border-radius: 21px;
+            box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.3);
+        }
+        .info-group .info-img{
+            width: 100%;
+            height: 150px;
+            border-radius: 20px 20px 0 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .info-img img{
+            height: 90%;
+            border-radius: 50%;
+        }
+        .info-group .info-user{
+            width: 100%;
+            border-radius: 0 0 20px 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-top: 1px solid #0886ee9f; /* dashed */
+        }
+        .info-group .info-user p{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info-group">
+            <div class="info-img">
+                <img src="pictures/dog.jpg" alt="Ảnh đại diện">
+            </div>
+            <div class="info-user">
+                <p>Họ tên: <b>Siberian Husky</b></p>
+                <p>Quê quán: Cần Thơ</p>
+                <p>Mô tả ngắn gọn: <i>yêu màu trắng, thích gặm xương, ghét màu hường</i></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

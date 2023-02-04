@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web resposive</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 14pt;
+        }
+
+        .container{
+            width: 1000px;
+            margin: 20px auto;
+        }
+
+        .banner{
+            height: 120px;
+            background-color: rgb(187, 223, 255);
+        }
+        .menu-top{
+            height: 60px;
+            background-color: rgb(187, 255, 232);
+            position: sticky;
+            top:0;
+        }
+        .content1{
+            height: 1000px;
+            background-color: rgb(232, 255, 206);
+            width: 50%;
+            float: left;
+            padding: 10px;
+        }
+
+        .content2{
+            height: 1000px;
+            background-color: rgb(255, 230, 206);
+            width: 50%;
+            float: left;
+            padding: 10px;
+        }
+        .footer{
+            height: 200px;
+            background-color: rgb(255, 206, 206);
+        }
+
+        /*CSS cho thiết bị có độ rộng < 900px*/
+        @media screen and (max-width: 900px){
+            /*Đặt lại độ rộng bằng kích thước màn hình*/
+            .container{
+                width: 100%;
+            }
+
+            /*Ẩn banner*/
+            .banner{
+                display: none;
+            }
+
+            /*Đặt lại bố cục cho content*/
+            .content1, .content2{
+                float: none;
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .banner{
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner">Banner</div>
+        <div class="menu-top">Menu top</div>
+        <div class="content1">Nội dung thứ nhất</div>
+        <div class="content2">Nội dung thứ hai</div>
+
+        <div style="clear: both"></div>
+
+        <div class="footer">Chân trang web</div>
+    </div>
+</body>
+</html>
