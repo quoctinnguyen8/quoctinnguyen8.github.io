@@ -40,6 +40,9 @@ input[type="text"] {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   z-index: 999;
   display: none;
+  /*fix scroll behavior for Android*/
+  touch-action:pan-y;
+  overscroll-behavior:contain;
 }
 
 .dropdown-item {
@@ -75,7 +78,7 @@ input[type="text"] {
       Maecenas fringilla turpis vel diam pharetra porta.
     </p>
      <div class="search-container">
-    <input id="search" type="text" placeholder="Nhập từ khóa..." autocomplete="off" />
+    <input id="search" type="text" placeholder="Nhập từ khoá..." autocomplete="off" />
     <div id="dropdown" class="dropdown"></div>
   </div> 
     <p>
@@ -131,7 +134,7 @@ input[type="text"] {
 
       if (query.length >= 2) {
         dropdown.style.display = 'block';
-        const filtered = sampleData.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+        const filtered = sampleData;
         dropdown.innerHTML = filtered.map(item => `<div class="dropdown-item">${item}</div>`).join('');
       } else {
         dropdown.style.display = 'none';
