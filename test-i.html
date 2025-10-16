@@ -89,7 +89,24 @@ input[type="text"] {
     const dropdown = document.getElementById('dropdown');
 
     // Dữ liệu mẫu để hiển thị trong dropdown
-    const sampleData = Array.from({length: 50}, (_, i) => `Kết quả tìm kiếm mẫu số ${i + 1}`);
+    const sampleData = [
+      'Kết quả tìm kiếm mẫu số 1',
+      'Kết quả tìm kiếm mẫu số 2',
+      'Kết quả tìm kiếm mẫu số 3',
+      'Kết quả tìm kiếm mẫu số 4',
+      'Kết quả tìm kiếm mẫu số 5',
+      'Kết quả tìm kiếm mẫu số 6',
+      'Kết quả tìm kiếm mẫu số 7',
+      'Công nghệ trí tuệ nhân tạo hiện đại',
+      'Học lập trình React Native cho người mới',
+      'Cách triển khai server tại nhà',
+      'Hướng dẫn cài đặt Ubuntu trên laptop cũ',
+      'Kỹ năng viết CV cho lập trình viên',
+      'Tối ưu hiệu năng website với React',
+      'Các xu hướng phát triển web năm 2025',
+      'So sánh giữa VueJS và ReactJS trong dự án thực tế',
+      'Thiết kế giao diện responsive trên mobile'
+    ];
 
     input.addEventListener('input', () => {
       const query = input.value.trim();
