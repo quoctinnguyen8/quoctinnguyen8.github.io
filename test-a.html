@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Two-column Select (Mobile Friendly)</title>
+  <style>
+    :root{
+      --gap: 12px;
+      --label-width: 120px; /* used on wide screens */
+      --select-fixed-width: 100px;
+      --max-content-width: 900px;
+    }/* Basic reset */
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.4;margin:16px;background:#f7f7fb;color:#111}
+
+.container{max-width:var(--max-content-width);margin:0 auto;padding:12px;background:#fff;border-radius:8px;box-shadow:0 6px 20px rgba(10,10,20,0.06)}
+
+/* Two-column row */
+.row{display:grid;grid-template-columns:1fr var(--select-fixed-width);align-items:center;gap:var(--gap);padding:8px 0}
+
+/* Left column label */
+.row label{display:block;padding-right:8px;word-break:break-word}
+
+/* Right column select - fixed width */
+.row .right{display:flex;justify-content:flex-end}
+select{
+  width:var(--select-fixed-width); /* fixed width requested */
+  min-width:var(--select-fixed-width);
+  max-width:var(--select-fixed-width);
+  padding:6px 8px;
+  border:1px solid #cfcfe6;border-radius:6px;background:#fff;appearance:menulist;
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+}
+
+/* Long option text: make sure tooltip/title is available on the select itself too */
+select option{white-space:normal}
+
+/* Responsive: on narrow screens stack label above select */
+@media (max-width:520px){
+  .row{grid-template-columns:1fr;align-items:stretch}
+  .row .right{justify-content:flex-start;margin-top:6px}
+}
+
+/* Small helper text */
+.hint{font-size:0.9rem;color:#5b5b6b;margin-top:6px}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Ví dụ: Label + Select (2 cột, responsive)</h2><!-- Row 1 -->
+<div class="row">
+  <label for="example-select-1">Chọn 1</label>
+  <div class="right">
+    <select id="example-select-1" name="example1" title="Hãy mở để xem nội dung đầy đủ">
+      <option value="1" title="Một mục có nội dung rất dài vượt quá 50 ký tự để minh họa cách trình bày trong select">Một mục có nội dung rất dài vượt quá 50 ký tự để minh họa cách trình bày trong select</option>
+      <option value="2" title="Thêm một lựa chọn nữa có chuỗi văn bản rất dài hơn năm mươi ký tự để kiểm tra">Thêm một lựa chọn nữa có chuỗi văn bản rất dài hơn năm mươi ký tự để kiểm tra</option>
+      <option value="3" title="Một ví dụ nữa: nội dung option dài, hơn 50 ký tự nhằm mục đích test overflow">Một ví dụ nữa: nội dung option dài, hơn 50 ký tự nhằm mục đích test overflow</option>
+    </select>
+  </div>
+</div>
+
+<!-- Row 2 -->
+<div class="row">
+  <label for="example-select-2">Chọn 2 (nhãn dài hơn)</label>
+  <div class="right">
+    <select id="example-select-2" name="example2" title="Mở menu để đọc đủ nội dung">
+      <option value="a" title="Option mẫu có nội dung cực dài để đảm bảo trên giao diện hiển thị nó bị cắt nhưng có thể đọc đầy đủ trong dropdown">Option mẫu có nội dung cực dài để đảm bảo trên giao diện hiển thị nó bị cắt nhưng có thể đọc đầy đủ trong dropdown</option>
+      <option value="b" title="Dòng mô tả tiếp tục dài hơn 50 ký tự để thoả yêu cầu của bạn">Dòng mô tả tiếp tục dài hơn 50 ký tự để thoả yêu cầu của bạn</option>
+    </select>
+  </div>
+</div>
+
+<p class="hint">Ghi chú: width của thẻ &lt;select&gt; cố định 100px theo yêu cầu. Nội dung &lt;option&gt; dài hơn 50 ký tự để kiểm tra overflow; trình duyệt sẽ hiển thị phần còn lại trong dropdown khi mở.</p>
+
+  </div></body>
+</html>
