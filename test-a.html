@@ -18,20 +18,24 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
 .container{max-width:var(--max-content-width);margin:0 auto;padding:12px;background:#fff;border-radius:8px;box-shadow:0 6px 20px rgba(10,10,20,0.06)}
 
 /* Two-column row */
-.row{display:grid;grid-template-columns:1fr var(--select-fixed-width);align-items:center;gap:var(--gap);padding:8px 0}
+.row{
+  display:flex;
+  justify-content:space-between;
+     align-items:center;gap:var(--gap);
+  padding:8px 0;
+}
 
 /* Left column label */
 .row label{display:block;padding-right:8px;word-break:break-word}
 
 /* Right column select - fixed width */
-.row .right{display:flex;justify-content:flex-end}
+/*.row .right{display:flex;justify-content:flex-end}*/
 select{
   width:var(--select-fixed-width); /* fixed width requested */
   min-width:var(--select-fixed-width);
   max-width:var(--select-fixed-width);
   padding:6px 8px;
-  border:1px solid #cfcfe6;border-radius:6px;background:#fff;appearance:menulist;
-  overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+  border:1px solid #cfcfe6;border-radius:6px;background:#fff;
 }
 
 /* Long option text: make sure tooltip/title is available on the select itself too */
